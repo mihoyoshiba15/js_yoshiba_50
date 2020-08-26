@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+<link rel="stylesheet" href="css/janken.css">
+</head>
+<body>
+
+<header>
+  <img src="img/bg_mv.png">
+  
+</header>
+
+<main>
+  <ul>
+    <li id="gu_btn">グー</li>
+    <li id="cho_btn">チョキ</li>
+    <li id="par_btn">パー</li>
+  </ul>
+  <div class="ma">
+  <div>コンピュータの出した手は？「<span id="pc_hands">なに？</span>」</div>
+  <div id="image"></div>
+  <div>勝負の結果</div>
+  <div id="judgement">???</div>
+  </div>
+</main>
+
+<footer></footer>
+<script>
+// gu:0
+// choki:1
+// pa:2
+
+//じゃんけん用のSCRIPTを書いてください
+$("#gu_btn").on("click",function(){
+    const you = 0 //gu
+    const me = Math.floor( Math.random() * 3 ); 
+
+    if(me == 0){
+      $("#pc_hands").text("グー");
+      // alert("drow")
+      $("#judgement").text("引き分け")
+      // $("#image").html('<img src="" alt="">');
+      $("#image").html('<img src="./img/グー.jpg" alt="">');
+    }
+
+    if(me == 1){
+      $("#pc_hands").text("チョキ");
+      // alert("win")
+      $("#judgement").text("勝ち");
+      $("#image").html('<img src="./img/ピース.jpg" alt="">');
+    }
+
+    if(me == 2){
+      $("#pc_hands").text("パー");
+      // alert("lose")
+      $("#judgement").text("負け");
+      $("#image").html('<img src="./img/パー.jpg" alt="">');
+    }})
+
+
+$("#cho_btn").on("click",function(){
+    const you = 1 //cho
+    const me = Math.ceil( Math.random() * 3 ); 
+
+    if(me == 0){
+      $("#pc_hands").text("グー");
+      // alert("drow")
+      $("#judgement").text("負け");
+      $("#image").html('<img src="./img/グー.jpg" alt="">');
+    }
+
+    if(me == 1){
+      $("#pc_hands").text("チョキ");
+      // alert("win")
+      $("#judgement").text("引き分け");
+      $("#image").html('<img src="./img/ピース.jpg" alt="">');
+    }
+
+    if(me == 2){
+      $("#pc_hands").text("パー");
+      // alert("lose")
+      $("#judgement").text("勝ち");
+      $("#image").html('<img src="./img/パー.jpg" alt="">');
+    }})
+
+    $("#par_btn").on("click",function(){
+    const you = 2 //pa
+    const me = Math.ceil( Math.random() * 3 ); 
+
+    if(me == 0){
+      $("#pc_hands").text("グー");
+      // alert("drow")
+      $("#judgement").text("勝ち");
+      $("#image").html('<img src="./img/グー.jpg" alt="">');
+    }
+
+    if(me == 1){
+      $("#pc_hands").text("チョキ");
+      // alert("win")
+      $("#judgement").text("負け");
+      $("#image").html('<img src="./img/ピース.jpg" alt="">');
+    }
+
+    if(me == 2){
+      $("#pc_hands").text("パー");
+      // alert("lose")
+      $("#judgement").text("引き分け");
+      $("#image").html('<img src="./img/パー.jpg" alt="">');
+    }})
+
+</script>
+</body>
+</html>

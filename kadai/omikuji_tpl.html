@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>おみくじ</title>
+</head>
+<body>
+
+<header>
+    <h1>おみくじ</h1>
+</header>
+
+<main>
+    <ul>
+        <li id="pull">おみくじを引く</li>
+    </ul>
+    <p id="echo"></p>
+</main>
+
+<footer>フッター</footer>
+<script>
+$("#pull").on("click",function(){
+    const janken = "pa"
+    const num = Math.ceil( Math.random() * 3 ); 
+    if(num == 1){
+        const opposite = "gu"
+    }
+if(opposite == janken){
+    alert("aiko")
+}else if (opposite == "gu" && janken == "pa"){
+    alert("win")
+}
+if(num==1){
+    $("#echo").html('<img src="1.png"')
+}
+if(num==2){
+    alert("中吉")
+}
+if(num==3){
+    alert("小吉")
+}
+if(num==4){
+    alert("吉")
+}
+if(num==5){
+    alert("末吉")
+};})
+
+
+
+
+
+</script>
+</body>
+</html>
